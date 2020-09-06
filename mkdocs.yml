@@ -1,0 +1,27 @@
+site_name: Entity Controller Documentation
+repo_name: 'ec-docs'
+repo_url: https://github.com/danobot/ec-docs
+edit_uri: 'edit/master/docs/'
+theme:
+  name: readthedocs
+  # custom_dir: 'theme'
+  # palette:
+  #   primary: 'indigo'
+  #   accent: 'blue'
+  # feature:
+  #   tabs: true
+markdown_extensions:
+  - admonition
+  - meta
+
+extra:
+  social:
+    - type: 'github'
+      link: 'test'
+    # - type: 'slack'
+    #   link: 'https://twitter.com/squidfunk'
+    # - type: 'linkedin'
+    #   link: 'https://linkedin.com/in/squidfunk'
+# pages:
+#   - Home: 'index.md'
+#   - Context: '/context'
