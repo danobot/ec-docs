@@ -29,12 +29,13 @@ extra:
 nav:
   - Home: 'index.md'
   - 'Getting Started':
-    - 'Getting Started': 'intro/getting-started.md'
+    - 'Installation': 'intro/installation.md'
     - 'Core Functionality': 'intro/core-functionality.md'
-    - 'Understanding EC States': 'intro/state-meanings.md'
-    - 'Understanding Entity Types': 'intro/entity-types.md'
-    - 'Understanding State Entites': 'intro/state-entities.md'
-    - 'Understanding Sensor Types': 'intro/sensor-types.md'
+    - 'Background': 
+      - 'EC States': 'intro/state-meanings.md'
+      - 'Entity Types': 'intro/entity-types.md'
+      - 'Sensor Types': 'intro/sensor-types.md'
+      - 'State Entites': 'intro/state-entities.md'
   - 'Configuration':
     - 'Basic':
       - 'Time Constraints': 'config-basic/time-constraints.md'

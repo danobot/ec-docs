@@ -3,14 +3,19 @@
   title: Understanding State Entities
 ---
 
-### State Entities
-It is possible to separate control entities and state entities. **Control entities** are the entities that are being turned on and off by EC. **State entities**, on the other hand, are used to observe state. In a basic configuration, your control entities are the same as your state entities (handled internally).
+# State Entities
+It is possible to separate control entities and state entities.
 
-The notion of separate `state entities` allows you to keep the entity that is being controlled separate from the one that is being observed.
+**Control entities** are the entities that are being turned on and off by EC. 
 
-Since the release of `v1.0.0` and the introduction of `override` entities, the real use case for `state_entities` is difficult to define.
+**State entities**, on the other hand, are used to observe state. 
 
-**Example 1**
+In a basic configuration, your control entities are the same as your state entities (handled internally for ease of use).
+
+The notion of separate `state entities` allows you to keep the entity that is being controlled separate from the one that is being observed. The following examples should illustrate the use cases for state entities.
+
+
+## Example 1
 One example is my porch light shown below:
 
 ```yaml
@@ -35,7 +40,8 @@ In this case, you need to tell the controller exactly which entitty to observe f
     state_entities:
       - light.porch_light
 ```
-**Example 2**
+## Example 2
+
 The configuration below will trigger based on the supplied sensors, the entities defined in `entities` will turn on if and only if all `state_entities` states are `false`. The `control` entity is a `scene` which does not provide useful state information as it is in `scening` state at all times.
 
 In general, you can use the config key `entities` and `state_entities` to specify these. For example, 

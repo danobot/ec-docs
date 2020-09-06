@@ -13,8 +13,7 @@ EC is available on the Home Assistant Community Store (HACS). This is the recomm
 # Configuration
 EC is ~very~ ~extremely~ _overwhelmingly_ configurable (too much for one developer to handle in their spare time). The following documentation section explain the different ways you can configure EC. In its most basic form, you can define a sensor, an entity and a delay.
 
-
-The controller needs `sensors` to monitor (such as motion detectors, binary switches, doors, weather, etc) as well as an entity to control (such as a light).
+The controller needs at least one `sensor` to monitor (such as motion detectors, binary switches, doors, weather, etc) as well as an entity to control (such as a light). For more information about the different entity types in EC check out the [Entity Types section](entity-types.md)
 
 ![Basic Controller](../images/basic.gif)
 

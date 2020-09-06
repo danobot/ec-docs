@@ -6,7 +6,9 @@ title: Understanding Sensor Types
 
 # Understanding Sensor Types
 ## Support for different sensor types
+
 There are two types of motion sensors:
+
   1. Sends a signal when motion happens (instantaneous event)
   2. Sends a signal when motion happens, stays on for the duration of motion and sends an `off` signal when motion supposedly ceases. (duration)
 
@@ -29,6 +31,7 @@ If you want the timer to be restarted one last time when the sensor returns to `
 #### Sensor Type Demonstrations
 
 Notation for state transition demonstrations: 
+
 * `[ ]` indicate internal event, 
 * `( )` indicates external influence (sensor state change), 
 * `...` indicates passage of time,
