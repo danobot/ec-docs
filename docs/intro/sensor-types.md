@@ -38,16 +38,16 @@ Notation for state transition demonstrations:
 
 > Idle -> Active Timer -> [timer started] ... [timer expires] -> Idle
 
-![Event Demo](images/event.gif)
+![Event Demo](../images/event.gif)
 
 **Duration Sensor**
 
 > Idle -> Active Timer -> [timer started] ... **[timer expires] ... (sensor goes to off)** -> Idle
 
-![Duration Demo](images/duration.gif)
+![Duration Demo](../images/duration.gif)
 
 **With `sensor_resets_timer`**
 
 > Idle -> Active Timer -> [timer started] ... [timer expires] ... (sensor goes to off) ... **[timer restarted] ... [timer expires]** -> Idle
 
-![Duration Demo](images/duration_sensor_resets_timer.gif)
+![Duration Demo](../images/duration_sensor_resets_timer.gif)

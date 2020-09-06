@@ -48,6 +48,7 @@ nav:
       - 'Delay Backoff': 'config-advanced/backoff.md'
       - 'Transition Behaviours (Experimental)': 'config-advanced/transition-behaviours.md'
       - 'EC Services': 'config-advanced/services.md'
+      - 'Block Mode Timeout': 'config-advanced/block-timeout.md'
     - 'Special Use Cases':
       - 'Ignore State Attribute Changes': 'special/ignore-state-attributes.md'
       - 'Custom State strings': 'special/state-strings.md'

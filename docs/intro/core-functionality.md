@@ -4,8 +4,11 @@
 ---
 
 
-# Features
-This component started out as an AppDaemon script implementation of motion activated lighting but it has since been generalised to be able to control any Home Assistant entity. I have discussed the original core requirements for motion lights [on my blog](https://www.danielbkr.net/2018/05/17/appdaemon-motion-lights.html). The basic responsibilities of EC are as follows:
+# Core Functionality
+This component started out as an AppDaemon script implementation of motion activated lighting but it has since been generalised to be able to control any Home Assistant entity. I have discussed the set of original core requirements for motion lights [on my blog](https://www.danielbkr.net/2018/05/17/appdaemon-motion-lights.html). 
+
+The basic responsibilities of EC are as follows:
+
 * (1) turn on **control entities** when **sensor entities** are triggered
 * (2) turn off **control entities** when **sensor entities** remain off for some time
 * (3) Do not interfere with manually controlled entities (tricky and not so obvious)

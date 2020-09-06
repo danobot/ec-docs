@@ -12,7 +12,7 @@ Entity Controller (EC) is an implementation of "When This, Then That for x amoun
 ## :clapper: Video Demo
 I created the following video to give a high-level overview of all EC features, how they work and how you can configure them for your use cases.
 
-[![Video](images/video_thumbnail.png)](https://youtu.be/HJQrA6sFlPs)
+[![Video](../images/video_thumbnail.png)](https://youtu.be/HJQrA6sFlPs)
 
 
 
@@ -50,7 +50,7 @@ override_example:
 ### Overrides
 You can define entities which stop EC from transitioning into `active` state if those entities are in `on` state. This allows you to enable/disable your controller based on environmental conditions such as "when I am watching TV" or "when the train is late" (seriously...).
 
-![Override Demo](images/override.gif)
+![Override Demo](../images/override.gif)
 
 ```yaml
 override_example:
@@ -126,19 +126,19 @@ Notation for state transition demonstrations:
 
 > Idle -> Active Timer -> [timer started] ... [timer expires] -> Idle
 
-![Event Demo](images/event.gif)
+![Event Demo](../images/event.gif)
 
 **Duration Sensor**
 
 > Idle -> Active Timer -> [timer started] ... **[timer expires] ... (sensor goes to off)** -> Idle
 
-![Duration Demo](images/duration.gif)
+![Duration Demo](../images/duration.gif)
 
 **With `sensor_resets_timer`**
 
 > Idle -> Active Timer -> [timer started] ... [timer expires] ... (sensor goes to off) ... **[timer restarted] ... [timer expires]** -> Idle
 
-![Duration Demo](images/duration_sensor_resets_timer.gif)
+![Duration Demo](../images/duration_sensor_resets_timer.gif)
 
 ### Home Assistant State Entities
 Since `v1.1.0`, EC creates and updates entities representing the EC itself. Beyond basic state (e.g. active, idle, overridden, etc.), this provides additional state attributes which update dynamically based on the state of the controller. See GIF animations for examples..
@@ -235,7 +235,7 @@ You must put these in quotes.
 ### Exponential Backoff
 Enabling the `backoff` option will cause `delay` timeouts to increase exponentially by a factor of `backoff_factor` up until a maximum timeout value of `backoff_max` is reached.
 
-![Backoff demo](images/backoff.gif)
+![Backoff demo](../images/backoff.gif)
 
 The graph below shows the relationship between number of sensor triggers and timeout values for the shown parameters.
 ```
@@ -243,7 +243,7 @@ delay = 60
 backoff_factor = 1.1
 ```
 
-![Backoff Graph](images/backoff_graph.png)
+![Backoff Graph](../images/backoff_graph.png)
 
 ### Calling custom scripts
 
@@ -271,12 +271,12 @@ The state sequence is as follows:
 
 > Idle ... (sensor ON) -> Blocked ... **(control entity OFF)** -> Idle
   
-![block timeout demo](images/blocked.gif)
+![block timeout demo](../images/blocked.gif)
 **With block_timeout:**
 
 > Idle ... (sensor ON) -> Blocked ... **(sensor ON) -> [Timer started] ... [Timer expires]** -> Idle
 
-![block timeout demo](images/block_timeout.gif)
+![block timeout demo](../images/block_timeout.gif)
 
 
 **Example configuration:**
