@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>State Entites - Entity Controller Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "State Entites";
+    var mkdocs_page_input_path = "intro\\state-entities.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Entity Controller Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../core-functionality/">Core Functionality</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Background</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../state-meanings/">EC States</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../entity-types/">Entity Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sensor-types/">Sensor Types</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">State Entites</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">Example 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">Example 2</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configuration</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Basic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/time-constraints/">Time Constraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/night-mode/">Night Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/override-entities/">Override Entities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/stay-mode/">Stay Mode</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Advanced</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/custom-params/">Customize Service Calls</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/custom-scripts/">Trigger Custom Scripts</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/backoff/">Delay Backoff</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/transition-behaviours/">Transition Behaviours (Experimental)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/services/">EC Services</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/block-timeout/">Block Mode Timeout</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Special Use Cases</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/ignore-state-attributes/">Ignore State Attribute Changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/state-strings/">Custom State strings</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://ec-demo.danielbkr.net">Demo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://danielbkr.net">Blog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/COPYING">License</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller">Github</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/CHANGELOG.md">Release Notes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contributions</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Entity Controller Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Background &raquo;</li>
+        
+      
+        
+          <li>Getting Started &raquo;</li>
+        
+      
+    
+    <li>State Entites</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/danobot/ec-docs/edit/master/docs/intro/state-entities.md"> Edit on ec-docs</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="state-entities">State Entities</h1>
+<p>It is possible to separate control entities and state entities.</p>
+<p><strong>Control entities</strong> are the entities that are being turned on and off by EC. </p>
+<p><strong>State entities</strong>, on the other hand, are used to observe state. </p>
+<p>In a basic configuration, your control entities are the same as your state entities (handled internally for ease of use).</p>
+<p>The notion of separate <code>state entities</code> allows you to keep the entity that is being controlled separate from the one that is being observed. The following examples should illustrate the use cases for state entities.</p>
+<h2 id="example-1">Example 1</h2>
+<p>One example is my porch light shown below:</p>
+<pre><code class="yaml">  mtn_porch:
+    sensors: 
+      - sensor.cam_front_motion_detected
+    entities:
+      - light.porch_light
+      - script.buzz_doorbell
+</code></pre>
+
+<p>The control entities contains a mix of entities from different domains. The state of the script entitity is non-sensical and causes issues. The controller enters active state, turns on control entities and then immediately leaves active state (going back to idle). This is because the state of the script is interpreted after turn on.</p>
+<p>In this case, you need to tell the controller exactly which entitty to observe for state. </p>
+<pre><code class="yaml">  mtn_porch:
+    sensors: 
+      - binary_sensor.front_motion_detected
+    entities:
+      - light.porch_light
+      - script.buzz_doorbell
+    state_entities:
+      - light.porch_light
+</code></pre>
+
+<h2 id="example-2">Example 2</h2>
+<p>The configuration below will trigger based on the supplied sensors, the entities defined in <code>entities</code> will turn on if and only if all <code>state_entities</code> states are <code>false</code>. The <code>control</code> entity is a <code>scene</code> which does not provide useful state information as it is in <code>scening</code> state at all times.</p>
+<p>In general, you can use the config key <code>entities</code> and <code>state_entities</code> to specify these. For example, </p>
+<pre><code class="yaml">mtn_lounge:
+  sensors:
+    - binary_sensor.cooking
+  entities:
+    - scene.cooking
+  state_entities:
+    - light.kitchen_led_strip
+  delay: 300
+</code></pre>
+
+<p><strong>Note:</strong> Using state entities can have unexpected consequences. For example, if you state entities do not overlap with control entities then your control entities will never turn off. This is the culprit of <em>advanced configurations</em>, use at your own risk. If you have problems, make your state entities the same as your control entities, and stick to state entities with a clear state (such as lights, media players etc.)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../config-basic/time-constraints/" class="btn btn-neutral float-right" title="Time Constraints">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../sensor-types/" class="btn btn-neutral" title="Sensor Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../sensor-types/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../config-basic/time-constraints/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

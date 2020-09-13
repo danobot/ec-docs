@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>EC goes into blocked state - Entity Controller Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "EC goes into blocked state";
+    var mkdocs_page_input_path = "troubleshooting\\blocked-state.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Entity Controller Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/installation/">Installation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/core-functionality/">Core Functionality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Background</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/state-meanings/">EC States</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/entity-types/">Entity Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/sensor-types/">Sensor Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/state-entities/">State Entites</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configuration</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Basic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/time-constraints/">Time Constraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/night-mode/">Night Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/override-entities/">Override Entities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/stay-mode/">Stay Mode</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Advanced</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/custom-params/">Customize Service Calls</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/custom-scripts/">Trigger Custom Scripts</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/backoff/">Delay Backoff</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/transition-behaviours/">Transition Behaviours (Experimental)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/services/">EC Services</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/block-timeout/">Block Mode Timeout</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Special Use Cases</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/ignore-state-attributes/">Ignore State Attribute Changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/state-strings/">Custom State strings</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://ec-demo.danielbkr.net">Demo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://danielbkr.net">Blog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/COPYING">License</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller">Github</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/CHANGELOG.md">Release Notes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/contributions/">Contributions</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Entity Controller Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>EC goes into blocked state</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/danobot/ec-docs/edit/master/docs/troubleshooting/blocked-state.md"> Edit on ec-docs</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ec-goes-into-blocked-state">EC goes into blocked state</h1>
+<p>Check how long it takes your control entities to actually turn on after the service call is dispatched. The default <code>grace_period</code> is 2 seconds.
+This means EC will make the call to turn on all entities and then it will ignore any state updates that come in for 2 seconds (default). The reason for this is that without this grace period, EC would actually block itself because it would interpret the state updates as manual control.</p>
+<p>Unfortunately, it is not possible to detect <em>who</em> called a service in Home Assistant. If that was the case we could simply ignore any service calls originating from EC itself.</p>
+<p>To solve your issue with EC ending up in <code>blocked</code> state, you can take a look at increasing the <code>grace_period</code> to something like 5 seconds. If your lights have a lot of latency then increasing this period will most likely resolve your issue.</p>
+<pre><code class="yaml">grace_period_ec:
+  sensor: binary_sensor.living_room_motion
+  entity: light.tv_backlight
+  grace_period: 5                           # default is 2
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

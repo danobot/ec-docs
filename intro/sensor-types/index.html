@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Sensor Types - Entity Controller Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Sensor Types";
+    var mkdocs_page_input_path = "intro\\sensor-types.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Entity Controller Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../core-functionality/">Core Functionality</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Background</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../state-meanings/">EC States</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../entity-types/">Entity Types</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Sensor Types</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#support-for-different-sensor-types">Support for different sensor types</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sensor-type-demonstrations">Sensor Type Demonstrations</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../state-entities/">State Entites</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configuration</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Basic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/time-constraints/">Time Constraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/night-mode/">Night Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/override-entities/">Override Entities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/stay-mode/">Stay Mode</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Advanced</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/custom-params/">Customize Service Calls</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/custom-scripts/">Trigger Custom Scripts</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/backoff/">Delay Backoff</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/transition-behaviours/">Transition Behaviours (Experimental)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/services/">EC Services</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-advanced/block-timeout/">Block Mode Timeout</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Special Use Cases</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/ignore-state-attributes/">Ignore State Attribute Changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/state-strings/">Custom State strings</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://ec-demo.danielbkr.net">Demo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://danielbkr.net">Blog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/COPYING">License</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller">Github</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/CHANGELOG.md">Release Notes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contributions</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Entity Controller Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Background &raquo;</li>
+        
+      
+        
+          <li>Getting Started &raquo;</li>
+        
+      
+    
+    <li>Sensor Types</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/danobot/ec-docs/edit/master/docs/intro/sensor-types.md"> Edit on ec-docs</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="understanding-sensor-types">Understanding Sensor Types</h1>
+<h2 id="support-for-different-sensor-types">Support for different sensor types</h2>
+<p>There are two types of motion sensors:</p>
+<ol>
+<li>Sends a signal when motion happens (instantaneous event)</li>
+<li>Sends a signal when motion happens, stays on for the duration of motion and sends an <code>off</code> signal when motion supposedly ceases. (duration)</li>
+</ol>
+<p>By default, EC assumes you have a Type 1 motion sensor (event based), these are more useful in home automation because they supply raw, unfiltered and unprocessed data. No assumptions are made about how the motion event data will be used. Since entties are stateful, the motion sensor entity in the demo below is on for only a brief period. EC only cares about the state change from <code>off</code> to <code>on</code>. In the future, there will be support for listening to HA events as well, which means the need to create 'dummy' <code>binary_sensors</code> for motion sensors is removed. Check out my <a href="https://github.com/danobot/mqtt_payload_processor"><code>processor</code> component</a> for more info.</p>
+<p>If your motion sensor emits both <code>on</code> and <code>off</code> signals, then add <code>sensor_type: duration</code> to your configuration. This can be useful for motion sensors, door sensors and locks (not an exhaustive list). By default, the controller treats sensors as <code>event</code> sensors.</p>
+<p>Control entities are turned off when the following events occur (whichever happens last):
+  * the timer expires and sensor is off
+  * the sensor state changes to <code>off</code> and timer already expired</p>
+<p>The following demo shows the behaviour in those two scenarios:</p>
+<p>If you want the timer to be restarted one last time when the sensor returns to <code>off</code>, then add <code>sensor_resets_timer: True</code> to your entity configuration.</p>
+<h4 id="sensor-type-demonstrations">Sensor Type Demonstrations</h4>
+<p>Notation for state transition demonstrations: </p>
+<ul>
+<li><code>[ ]</code> indicate internal event, </li>
+<li><code>( )</code> indicates external influence (sensor state change), </li>
+<li><code>...</code> indicates passage of time,</li>
+<li><code>-&gt;</code> Indicates flow</li>
+</ul>
+<p><strong>Normal sensor</strong></p>
+<blockquote>
+<p>Idle -&gt; Active Timer -&gt; [timer started] ... [timer expires] -&gt; Idle</p>
+</blockquote>
+<p><img alt="Event Demo" src="../../images/event.gif" /></p>
+<p><strong>Duration Sensor</strong></p>
+<blockquote>
+<p>Idle -&gt; Active Timer -&gt; [timer started] ... <strong>[timer expires] ... (sensor goes to off)</strong> -&gt; Idle</p>
+</blockquote>
+<p><img alt="Duration Demo" src="../../images/duration.gif" /></p>
+<p><strong>With <code>sensor_resets_timer</code></strong></p>
+<blockquote>
+<p>Idle -&gt; Active Timer -&gt; [timer started] ... [timer expires] ... (sensor goes to off) ... <strong>[timer restarted] ... [timer expires]</strong> -&gt; Idle</p>
+</blockquote>
+<p><img alt="Duration Demo" src="../../images/duration_sensor_resets_timer.gif" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../state-entities/" class="btn btn-neutral float-right" title="State Entites">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../entity-types/" class="btn btn-neutral" title="Entity Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../entity-types/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../state-entities/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>EC Services - Entity Controller Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "EC Services";
+    var mkdocs_page_input_path = "config-advanced\\services.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Entity Controller Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/installation/">Installation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/core-functionality/">Core Functionality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Background</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/state-meanings/">EC States</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/entity-types/">Entity Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/sensor-types/">Sensor Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../intro/state-entities/">State Entites</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configuration</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Basic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/time-constraints/">Time Constraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/night-mode/">Night Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/override-entities/">Override Entities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../config-basic/stay-mode/">Stay Mode</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Advanced</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../custom-params/">Customize Service Calls</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../custom-scripts/">Trigger Custom Scripts</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../backoff/">Delay Backoff</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../transition-behaviours/">Transition Behaviours (Experimental)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">EC Services</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#entity-services">Entity Services</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#stay-mode">Stay Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#clearing-blocking-state">Clearing Blocking State</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#set-night-mode">Set Night Mode</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../block-timeout/">Block Mode Timeout</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Special Use Cases</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/ignore-state-attributes/">Ignore State Attribute Changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../special/state-strings/">Custom State strings</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://ec-demo.danielbkr.net">Demo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://danielbkr.net">Blog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/COPYING">License</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller">Github</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/CHANGELOG.md">Release Notes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../intro/contributions/">Contributions</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Entity Controller Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Advanced &raquo;</li>
+        
+      
+        
+          <li>Configuration &raquo;</li>
+        
+      
+    
+    <li>EC Services</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/danobot/ec-docs/edit/master/docs/config-advanced/services.md"> Edit on ec-docs</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="automation-support-and-services">Automation Support and Services</h1>
+<h2 id="entity-services">Entity Services</h2>
+<p>The entity controller support a few services that can be used to extend the customization of the entity.</p>
+<h3 id="stay-mode">Stay Mode</h3>
+<pre><code class="yaml">service: entity_controller.enable_stay_mode
+  entity_id: entity_controller.motion
+</code></pre>
+
+<p>This service takes an entity id and will enable stay mode which means that control entities will not be turned off once EC is triggered. All control entities must be manually turned off (or via other automations) before EC will return to <code>idle</code> state.</p>
+<pre><code class="yaml">service: entity_controller.disable_stay_mode
+  entity_id: entity_controller.motion
+</code></pre>
+
+<p>This service takes an entity id and will disable stay mode. This does not transition EC to <code>idle</code> state if it is already in <code>active_stay_on</code> state. In this case you must turn off all entities manually.</p>
+<p><strong>Note:</strong> There is no attribute that exposes the stay flag state at this time.</p>
+<h3 id="clearing-blocking-state">Clearing Blocking State</h3>
+<pre><code class="yaml">service: entity_controller.clear_block
+  entity_id: entity_controller.motion
+</code></pre>
+
+<p>This service will clear the blocking state, if it is set, the same as if the block timer was run down.
+This allows for automations to react to the entity being blocked by a light on and clear the state is needed.</p>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">automations:
+- id: example
+  trigger:
+  - platform: state
+      entity_id: entity_controller.motion
+      to: blocking
+      for: 00:01:00
+  action:
+  - service: entity_controller.clear_block
+    entity_id: entity_controller.motion
+</code></pre>
+
+<p><strong>Note:</strong> The above example is functionally equivalent to setting a block timeout in the configuration.</p>
+<h3 id="set-night-mode">Set Night Mode</h3>
+<pre><code class="yaml">service: entity_controller.set_night_mode
+  entity_id: entity_controller.motion
+  data:
+    start_time: now
+    end_time: constraint
+</code></pre>
+
+<p>This service is for customizing the night mode settings for more dynamic scripts. It will set the night mode start 
+and stop times to the times specified. If only one or both times are provided, only those times are changed. If 
+no time is provided night mode is effectivly disabled by setting both the start and end to midnight. This service takes
+the same time rules as the configuration, plus supports two additional options that make sense with automations.</p>
+<pre><code class="yaml">start_time: now
+</code></pre>
+
+<p>This will set the start (or end) night mode time to the current time. This is usefull for turning night mode on or off instantly.</p>
+<pre><code class="yaml">end_time: constraint
+</code></pre>
+
+<p>This will set the end (or start) night mode time to the appropriate constraint time (start or end.) This is handy for starting or making
+night mode last the same as the configured constraints. <strong>Note:</strong> This has no meaning if constraints are not set, so it would be equivilent to not providing a value.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../block-timeout/" class="btn btn-neutral float-right" title="Block Mode Timeout">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../transition-behaviours/" class="btn btn-neutral" title="Transition Behaviours (Experimental)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../transition-behaviours/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../block-timeout/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

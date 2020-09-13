@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Entity Controller Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Entity Controller Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#clapper-video-demo">:clapper: Video Demo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#using-time-constraints">Using Time Constraints</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="intro/installation/">Installation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="intro/core-functionality/">Core Functionality</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Background</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="intro/state-meanings/">EC States</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="intro/entity-types/">Entity Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="intro/sensor-types/">Sensor Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="intro/state-entities/">State Entites</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Configuration</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Basic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="config-basic/time-constraints/">Time Constraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-basic/night-mode/">Night Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-basic/override-entities/">Override Entities</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-basic/stay-mode/">Stay Mode</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Advanced</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="config-advanced/">Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-advanced/custom-params/">Customize Service Calls</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-advanced/custom-scripts/">Trigger Custom Scripts</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-advanced/backoff/">Delay Backoff</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-advanced/transition-behaviours/">Transition Behaviours (Experimental)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-advanced/services/">EC Services</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="config-advanced/block-timeout/">Block Mode Timeout</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Special Use Cases</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="special/ignore-state-attributes/">Ignore State Attribute Changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="special/state-strings/">Custom State strings</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://ec-demo.danielbkr.net">Demo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://danielbkr.net">Blog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/COPYING">License</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller">Github</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/danobot/entity-controller/blob/master/CHANGELOG.md">Release Notes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="intro/contributions/">Contributions</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Entity Controller Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/danobot/ec-docs/edit/master/docs/index.md"> Edit on ec-docs</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a href="https://github.com/danobot/entity-controller/blob/develop/COPYING"><img alt="License" src="https://img.shields.io/github/license/danobot/entity-controller.svg?style=flat-square" /></a>
+<a href="https://danielbkr.net/?utm_source=github&amp;utm_medium=badge&amp;utm_campaign=entity-controller"><img alt="Blog" src="https://img.shields.io/badge/blog-The%20Budget%20Smart%20Home-orange?style=flat-square" /></a>
+<a href="https://paypal.me/danielb160"><img alt="donate paypal" src="https://img.shields.io/badge/donate-PayPal-blue.svg?style=flat-square" /></a>
+<a href="https://gf.me/u/w62k93"><img alt="donate gofundme" src="https://img.shields.io/badge/donate-GoFundMe-orange?style=flat-square" /></a></p>
+<h1 id="wave-introduction">:wave: Introduction</h1>
+<p>Entity Controller (EC) is an implementation of "When This, Then That for x amount of time" using a finite state machine that ensures basic automations do not interfere with the rest of your home automation setup. This component encapsulates common automation scenarios into a neat package that can be configured easily and reused throughout your home. Traditional automations would need to be duplicated <em>for each instance</em> in your config. The use cases for this component are endless because you can use any entity as input and outputs (there is no restriction to motion sensors and lights).</p>
+<p><strong>Latest stable version <code>v6.1.1</code> tested on Home Assistant <code>0.112.1</code>.</strong></p>
+<h2 id="clapper-video-demo">:clapper: Video Demo</h2>
+<p>I created the following video to give a high-level overview of all EC features, how they work and how you can configure them for your use cases.</p>
+<p><a href="https://youtu.be/HJQrA6sFlPs"><img alt="Video" src="../images/video_thumbnail.png" /></a></p>
+<h3 id="using-time-constraints">Using Time Constraints</h3>
+<p>You may wish to constrain at what time of day your motion lights are activated. You can use the <code>start_time</code> and <code>end_time</code> parameters for this.</p>
+<pre><code class="yaml">motion_light:
+  sensor: binary_sensor.living_room_motion
+  entity: light.table_lamp
+  start_time: '00:00:00'                      # required
+  end_time: '00:30:00'                        # required
+</code></pre>
+
+<p>Time values relative to sunset/sunrise are supported and use the following syntax:</p>
+<pre><code class="yaml">motion_light_sun:
+  sensor: binary_sensor.living_room_motion
+  entity: light.table_lamp
+  start_time: sunset - 00:30:00               # required
+  end_time: sunrise + 00:30:00                # required
+</code></pre>
+
+<h1 id="stay-mode">Stay Mode</h1>
+<p>This simple option will make EC give up control of entities after the initial trigger. EC will stay in <code>active_stay_on</code> state state indefinitely until the control entity is manually turned off.</p>
+<pre><code class="yaml">override_example:
+  sensor: binary_sensor.lounge_motion
+  entity: light.lounge_lamp
+  delay: 5
+  stay_mode: on
+</code></pre>
+
+<h3 id="overrides">Overrides</h3>
+<p>You can define entities which stop EC from transitioning into <code>active</code> state if those entities are in <code>on</code> state. This allows you to enable/disable your controller based on environmental conditions such as "when I am watching TV" or "when the train is late" (seriously...).</p>
+<p><img alt="Override Demo" src="../images/override.gif" /></p>
+<pre><code class="yaml">override_example:
+  sensor: 
+    - binary_sensor.lounge_motion
+    - binary_sensor.lounge_motion_2
+  entities:
+    - light.tv_led
+    - light.lounge_lamp
+  delay: 5
+  overrides:
+    - media_player.tv
+    - input_boolean.bedroom_motion_trigger
+</code></pre>
+
+<p><strong>Note 1</strong> <code>input_boolean</code>s can be controlled in automations via the <code>input_boolean.turn_on</code>, <code>input_boolean.turn_off</code> and <code>input_boolean.toggle</code> services. This allows you to enable/disable your app based on automations! Services will be implemented in the future such as <code>entity_controller/enable</code> for a specific <code>entity_id</code>.</p>
+<p><strong>Note 2:</strong> You will inevitably run into a situation where your entity produces new states that EC does not know about -- a vacuum might be in <code>vacuuming</code> state, as opposed to <code>on</code>. Check the section on "custom state strings" for information on how to get around this.</p>
+<h3 id="specifying-custom-service-call-parameters">Specifying Custom Service Call Parameters</h3>
+<p>Any custom service defined in EC configuration will be passed to the <code>turn_on</code> and <code>turn_off</code> calls of the control entities. Simply add a <code>service_data</code> or <code>service_data_off</code> field to the root or <code>night_mode</code> fields to pass custom service parameters along. An example is shown in <em>Night Mode</em> documentation.</p>
+<p>Note that all control entities must support the defined service data parameters. Some entities may reject unknown parameters and throw an error! In that case you may add those entities as activation/deactivation triggers instead.</p>
+<h3 id="night-mode">Night Mode</h3>
+<p>Night mode allows you to use slightly different parameters at night. The use case for this is that you may want to use a shorter <code>delay</code> interval or a dimmed <code>brightness</code> level at night (see <em>Specifying Custom Service Call Parameters</em> under <em>Advanced Configuration</em> for details).</p>
+<pre><code class="yaml">motion_light:
+  sensor: binary_sensor.living_room_motion
+  entity: light.tv_led
+  delay: 300
+  service_data:
+    brightness: 80
+  night_mode:
+    delay: 60
+    service_data:
+      brightness: 20
+    start_time: '22:00:00'                  # required
+    end_time: '07:00:00'                    # required
+</code></pre>
+
+<h3 id="support-for-different-sensor-types">Support for different sensor types</h3>
+<p>There are two types of motion sensors:
+  1. Sends a signal when motion happens (instantaneous event)
+  2. Sends a signal when motion happens, stays on for the duration of motion and sends an <code>off</code> signal when motion supposedly ceases. (duration)</p>
+<p>By default, EC assumes you have a Type 1 motion sensor (event based), these are more useful in home automation because they supply raw, unfiltered and unprocessed data. No assumptions are made about how the motion event data will be used. Since entties are stateful, the motion sensor entity in the demo below is on for only a brief period. EC only cares about the state change from <code>off</code> to <code>on</code>. In the future, there will be support for listening to HA events as well, which means the need to create 'dummy' <code>binary_sensors</code> for motion sensors is removed. Check out my <a href="https://github.com/danobot/mqtt_payload_processor"><code>processor</code> component</a> for more info.</p>
+<p>If your motion sensor emits both <code>on</code> and <code>off</code> signals, then add <code>sensor_type: duration</code> to your configuration. This can be useful for motion sensors, door sensors and locks (not an exhaustive list). By default, the controller treats sensors as <code>event</code> sensors.</p>
+<p>Control entities are turned off when the following events occur (whichever happens last):
+  * the timer expires and sensor is off
+  * the sensor state changes to <code>off</code> and timer already expired</p>
+<p>The following demo shows the behaviour in those two scenarios:</p>
+<p>If you want the timer to be restarted one last time when the sensor returns to <code>off</code>, then add <code>sensor_resets_timer: True</code> to your entity configuration.</p>
+<h4 id="sensor-type-demonstrations">Sensor Type Demonstrations</h4>
+<p>Notation for state transition demonstrations: 
+* <code>[ ]</code> indicate internal event, 
+* <code>( )</code> indicates external influence (sensor state change), 
+* <code>...</code> indicates passage of time,
+* <code>-&gt;</code> Indicates flow</p>
+<p><strong>Normal sensor</strong></p>
+<blockquote>
+<p>Idle -&gt; Active Timer -&gt; [timer started] ... [timer expires] -&gt; Idle</p>
+</blockquote>
+<p><img alt="Event Demo" src="../images/event.gif" /></p>
+<p><strong>Duration Sensor</strong></p>
+<blockquote>
+<p>Idle -&gt; Active Timer -&gt; [timer started] ... <strong>[timer expires] ... (sensor goes to off)</strong> -&gt; Idle</p>
+</blockquote>
+<p><img alt="Duration Demo" src="../images/duration.gif" /></p>
+<p><strong>With <code>sensor_resets_timer</code></strong></p>
+<blockquote>
+<p>Idle -&gt; Active Timer -&gt; [timer started] ... [timer expires] ... (sensor goes to off) ... <strong>[timer restarted] ... [timer expires]</strong> -&gt; Idle</p>
+</blockquote>
+<p><img alt="Duration Demo" src="../images/duration_sensor_resets_timer.gif" /></p>
+<h3 id="home-assistant-state-entities">Home Assistant State Entities</h3>
+<p>Since <code>v1.1.0</code>, EC creates and updates entities representing the EC itself. Beyond basic state (e.g. active, idle, overridden, etc.), this provides additional state attributes which update dynamically based on the state of the controller. See GIF animations for examples..</p>
+<p>These can be referenced in various <code>sensor</code> and <code>automation</code> configurations and extracted using <code>state-attributes-card</code> and template sensors.</p>
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+<p>The following is an example coniguration used to control my outside light at night. The override is used to manually enable or disable this EC instance. Note that EC will call the <code>turn_on</code> service on its control entties, meaning you can use it to trigger different types of entities at the same time. My <code>buzz_short</code> script emits a short notification tone from a buzzer speaker attached to a Raspberry Pi GPIO pin. (See related <a href="https://blog.danielbkr.net/2018/07/24/python-docker-mqtt-audio-buzzer.html">blog post</a> and <a href="https://github.com/danobot/mqtt-audio-buzzer-rpi">MQTT Audio Buzzer Repository</a>).</p>
+<pre><code class="yaml">  mtn_outside:
+    sensor: 
+      - binary_sensor.backyard_motion
+      - binary_sensor.shed_door
+      - binary_sensor.kitchen_door
+      - binary_sensor.mtn_outside_2
+    entities:
+      - light.outside_light
+      - script.buzz_short
+    override: 
+      - input_boolean.outside_motion
+    state_entities:
+      - light.outside_light
+    delay: 120
+    backoff: true
+    start_time: 'sunset - 01:00:00'
+    end_time: 'sunrise + 01:00:00'
+</code></pre>
+
+<h3 id="transition-behaviours-beta">Transition Behaviours (beta)</h3>
+<p>Transition Behaviours allow you to define what EC should do at these transition points.</p>
+<p><strong>Use Case:</strong></p>
+<blockquote>
+<p>One use case for this is when lights turn on just before the end of the active period and then they never turn off because EC is constrained. For me, the light would be triggered by me walking into a room at 
+7am and the constrain period would begin at 7:16am. Since the light duration is 20 minutes, EC will never turn off the light because it is in <code>constrained</code> state at 7:20am. This is annoying because the lights stay on all day. I can use <code>on_enter_constrained: "off"</code> to turn off all lights at 7:16am (when the EC is constrained).</p>
+</blockquote>
+<pre><code>transition_behaviours:   # light triggers on then off
+    entities: 
+      - input_boolean.lamp
+    sensors:
+      - sensor.motion_sensor
+    overrides:
+      - input_boolean.override_switch
+    delay: 5
+    behaviours:
+      on_enter_constrained: &quot;on&quot;
+    start_time: sunset
+    end_time: &quot;7:16:00&quot;
+</code></pre>
+
+<p><strong>Notes about light flicker:</strong> This can cause light flicker particularly for the <code>on_exit_*</code> behaviours. If your lights flicker, make sure you understand how this configuration is impacting them and use the <code>on_enter_*</code> behaviours instead.</p>
+<h4 id="supported-transition-points">Supported transition points:</h4>
+<p>The following behaviours can be defined using the values <code>"on"</code>, <code>"off"</code> and the default being <code>"ignore"</code>. These must be in quotes to avoidconflicts with YAML truth values.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>on_enter_idle</td>
+<td></td>
+</tr>
+<tr>
+<td>on_exit_idle</td>
+<td></td>
+</tr>
+<tr>
+<td>on_enter_active</td>
+<td></td>
+</tr>
+<tr>
+<td>on_exit_active</td>
+<td></td>
+</tr>
+<tr>
+<td>on_enter_overidden</td>
+<td></td>
+</tr>
+<tr>
+<td>on_exit_overidden</td>
+<td></td>
+</tr>
+<tr>
+<td>on_enter_constrained</td>
+<td></td>
+</tr>
+<tr>
+<td>on_exit_constrained</td>
+<td></td>
+</tr>
+<tr>
+<td>on_enter_blocked</td>
+<td></td>
+</tr>
+<tr>
+<td>on_exit_blocked</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-transition-behaviours">Supported transition behaviours:</h4>
+<p>You must put these in quotes.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"on"</td>
+<td>Control entities will be explicitly turned on.</td>
+</tr>
+<tr>
+<td>"off"</td>
+<td>Control entities will be explicitly turned off.</td>
+</tr>
+<tr>
+<td>"ignore"</td>
+<td>(default) Nothing special will happen (control left to state machine)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="yaml">  mtn_outside:
+    sensor: 
+      - binary_sensor.mtn_kitchen
+    entities:
+      - light.kitchen_led
+    state_entities:
+      - light.outside_light
+    delay: 1200
+    start_time: '18:00:00'
+    end_time: '07:00:00'
+    end_time_action: &quot;off&quot;                   # will turn off all control entities at 7am if they are on.
+</code></pre>
+
+<h3 id="exponential-backoff">Exponential Backoff</h3>
+<p>Enabling the <code>backoff</code> option will cause <code>delay</code> timeouts to increase exponentially by a factor of <code>backoff_factor</code> up until a maximum timeout value of <code>backoff_max</code> is reached.</p>
+<p><img alt="Backoff demo" src="../images/backoff.gif" /></p>
+<p>The graph below shows the relationship between number of sensor triggers and timeout values for the shown parameters.</p>
+<pre><code>delay = 60
+backoff_factor = 1.1
+</code></pre>
+
+<p><img alt="Backoff Graph" src="../images/backoff_graph.png" /></p>
+<h3 id="calling-custom-scripts">Calling custom scripts</h3>
+<p>You may want to use the activation and deactivation of EC as a trigger for some other entity (most like a script). For the <code>turn_on</code>. You can define <code>trigger_on_activate</code> and <code>trigger_on_deactivate</code>. The controller will call the <code>turn_on</code> service on both and observe the state using <code>entity</code>. These trigger entities:
+* do not receive custom service data (as they may not require it)
+* have only the <code>turn_on</code> service is called on  (as they may not support anything else)
+* will not have ther state observed (as it may be meaningless, like for Script entities.)</p>
+<p>These are the primary reasons why you might need the trigger entities in your configuration.</p>
+<pre><code class="yaml">motion_light:
+  sensor: binary_sensor.living_room_motion
+  entity: light.led                         # required
+  trigger_on_activate: script.fade_in_led             # required
+  trigger_on_deactivate: script.fade_out_led           # required if `turn_off` does not work for the entity you want to control, e.g. scripts
+</code></pre>
+
+<h3 id="block-mode-time-restriction">Block Mode Time Restriction</h3>
+<p>When <code>block_timeout</code> is defined, the controller will start a timer when the sensor is triggered and exit <code>blocked</code> state once the timeout is reached, thereby restricting the time that a controller can remain in <code>blocked</code> mode. This is useful when you want the controller to turn off a light that was turned on manually.</p>
+<p>The state sequence is as follows:</p>
+<p><strong>Without block_timeout:</strong></p>
+<blockquote>
+<p>Idle ... (sensor ON) -&gt; Blocked ... <strong>(control entity OFF)</strong> -&gt; Idle</p>
+</blockquote>
+<p><img alt="block timeout demo" src="../images/blocked.gif" />
+<strong>With block_timeout:</strong></p>
+<blockquote>
+<p>Idle ... (sensor ON) -&gt; Blocked ... <strong>(sensor ON) -&gt; [Timer started] ... [Timer expires]</strong> -&gt; Idle</p>
+</blockquote>
+<p><img alt="block timeout demo" src="../images/block_timeout.gif" /></p>
+<p><strong>Example configuration:</strong></p>
+<pre><code class="yaml">blocked_mode_demo:
+  sensor: binary_sensor.living_room_motion
+  entity: light.lounge_lamp
+  block_timeout: 160                        # in seconds (like all other time measurements)
+</code></pre>
+
+<p><strong>Note 1:</strong> EC enters the <code>blocked</code> state when a control entity is <code>on</code> while a sensor entity is triggered. This means the timer is not started at the moment the light is switched on. Instead, it is started when the sensor is activated. Therefore, if the light is turned off before the controller ever entered <code>blocked</code> mode, then the controller remains in <code>idle</code> state.</p>
+<p><strong>Note 2:</strong> EC is designed to avoid any interference with external automations that might affect control entities. Using the <code>block_timeout</code> directly violates this principle. If you see unintended interference, reconsider your configuration and remove the <code>block_timeout</code> functionality if necessary.</p>
+<p>The easiest way to make sense of it is to set up a configuration and explore the different scenarios through every day use. Then re-read the explanation in this document and it will (hopefully) make sense.</p>
+<h3 id="state-entities">State Entities</h3>
+<p>It is possible to separate control entities and state entities. <strong>Control entities</strong> are the entities that are being turned on and off by EC. <strong>State entities</strong>, on the other hand, are used to observe state. In a basic configuration, your control entities are the same as your state entities (handled internally).</p>
+<p>The notion of separate <code>state entities</code> allows you to keep the entity that is being controlled separate from the one that is being observed.</p>
+<p>Since the release of <code>v1.0.0</code> and the introduction of <code>override</code> entities, the real use case for <code>state_entities</code> is difficult to define.</p>
+<p><strong>Example 1</strong>
+One example is my porch light shown below:</p>
+<pre><code class="yaml">  mtn_porch:
+    sensors: 
+      - sensor.cam_front_motion_detected
+    entities:
+      - light.porch_light
+      - script.buzz_doorbell
+</code></pre>
+
+<p>The control entities contains a mix of entities from different domains. The state of the script entitity is non-sensical and causes issues. The controller enters active state, turns on control entities and then immediately leaves active state (going back to idle). This is because the state of the script is interpreted after turn on.</p>
+<p>In this case, you need to tell the controller exactly which entitty to observe for state. </p>
+<pre><code class="yaml">  mtn_porch:
+    sensors: 
+      - binary_sensor.front_motion_detected
+    entities:
+      - light.porch_light
+      - script.buzz_doorbell
+    state_entities:
+      - light.porch_light
+</code></pre>
+
+<p><strong>Example 2</strong>
+The configuration below will trigger based on the supplied sensors, the entities defined in <code>entities</code> will turn on if and only if all <code>state_entities</code> states are <code>false</code>. The <code>control</code> entity is a <code>scene</code> which does not provide useful state information as it is in <code>scening</code> state at all times.</p>
+<p>In general, you can use the config key <code>entities</code> and <code>state_entities</code> to specify these. For example, </p>
+<pre><code class="yaml">mtn_lounge:
+  sensors:
+    - binary_sensor.cooking
+  entities:
+    - scene.cooking
+  state_entities:
+    - light.kitchen_led_strip
+  delay: 300
+</code></pre>
+
+<p><strong>Note:</strong> Using state entities can have unexpected consequences. For example, if you state entities do not overlap with control entities then your control entities will never turn off. This is the culprit of <em>advanced configurations</em>, use at your own risk. If you have problems, make your state entities the same as your control entities, and stick to state entities with a clear state (such as lights, media players etc.)</p>
+<h2 id="automation-support-and-services">Automation Support and Services</h2>
+<h3 id="entity-services">Entity Services</h3>
+<p>The entity controller support a few services that can be used to extend the customization of the entity.</p>
+<h4 id="stay-mode_1">Stay Mode</h4>
+<pre><code class="yaml">service: entity_controller.enable_stay_mode
+  entity_id: entity_controller.motion
+</code></pre>
+
+<p>This service takes an entity id and will enable stay mode which means that control entities will not be turned off once EC is triggered. All control entities must be manually turned off (or via other automations) before EC will return to <code>idle</code> state.</p>
+<pre><code class="yaml">service: entity_controller.disable_stay_mode
+  entity_id: entity_controller.motion
+</code></pre>
+
+<p>This service takes an entity id and will disable stay mode. This does not transition EC to <code>idle</code> state if it is already in <code>active_stay_on</code> state. In this case you must turn off all entities manually.</p>
+<p><strong>Note:</strong> There is no attribute that exposes the stay flag state at this time.</p>
+<h4 id="clearing-blocking-state">Clearing Blocking State</h4>
+<pre><code class="yaml">service: entity_controller.clear_block
+  entity_id: entity_controller.motion
+</code></pre>
+
+<p>This service will clear the blocking state, if it is set, the same as if the block timer was run down.
+This allows for automations to react to the entity being blocked by a light on and clear the state is needed.</p>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">automations:
+- id: example
+  trigger:
+  - platform: state
+      entity_id: entity_controller.motion
+      to: blocking
+      for: 00:01:00
+  action:
+  - service: entity_controller.clear_block
+    entity_id: entity_controller.motion
+</code></pre>
+
+<p><strong>Note:</strong> The above example is functionally equivalent to setting a block timeout in the configuration.</p>
+<h4 id="set-night-mode">Set Night Mode</h4>
+<pre><code class="yaml">service: entity_controller.set_night_mode
+  entity_id: entity_controller.motion
+  data:
+    start_time: now
+    end_time: constraint
+</code></pre>
+
+<p>This service is for customizing the night mode settings for more dynamic scripts. It will set the night mode start 
+and stop times to the times specified. If only one or both times are provided, only those times are changed. If 
+no time is provided night mode is effectivly disabled by setting both the start and end to midnight. This service takes
+the same time rules as the configuration, plus supports two additional options that make sense with automations.</p>
+<pre><code class="yaml">start_time: now
+</code></pre>
+
+<p>This will set the start (or end) night mode time to the current time. This is usefull for turning night mode on or off instantly.</p>
+<pre><code class="yaml">end_time: constraint
+</code></pre>
+
+<p>This will set the end (or start) night mode time to the appropriate constraint time (start or end.) This is handy for starting or making
+night mode last the same as the configured constraints. <strong>Note:</strong> This has no meaning if constraints are not set, so it would be equivilent to not providing a value.</p>
+<h3 id="custom-state-strings">Custom State Strings</h3>
+<p>The following code extract shows the default state strings that were made to represent the <code>on</code> and <code>off</code> states. These defaults can be overwritten for all entity types using the configuration keys <code>state_strings_on</code> and <code>state_strings_off</code>. For more granular control, use the entity specific configuration keys shown in the code extract below.</p>
+<pre><code class="python">DEFAULT_ON = [&quot;on&quot;, &quot;playing&quot;, &quot;home&quot;]
+DEFAULT_OFF = [&quot;off&quot;, &quot;idle&quot;, &quot;paused&quot;, &quot;away&quot;]
+self.CONTROL_ON_STATE = config.get(&quot;control_states_on&quot;, DEFAULT_ON)
+self.CONTROL_OFF_STATE = config.get(&quot;control_states_off&quot;, DEFAULT_OFF)
+self.SENSOR_ON_STATE = config.get(&quot;sensor_states_on&quot;, DEFAULT_ON)
+self.SENSOR_OFF_STATE = config.get(&quot;sensor_states_off&quot;, DEFAULT_OFF)
+self.OVERRIDE_ON_STATE = config.get(&quot;override_states_on&quot;, DEFAULT_ON)
+self.OVERRIDE_OFF_STATE = config.get(&quot;override_states_off&quot;, DEFAULT_OFF)
+self.STATE_ON_STATE = config.get(&quot;state_states_on&quot;, DEFAULT_ON)
+self.STATE_OFF_STATE = config.get(&quot;state_states_off&quot;, DEFAULT_OFF)
+</code></pre>
+
+<h3 id="customize-which-attribute-changes-are-considered-manual-control">Customize which attribute changes are considered "manual control"</h3>
+<p>By default, any attribute change is considered significant and will qualify for entering the <code>blocked</code> state. However, in certain cases, you might want to ignore certain changes. For example, when using a component like f.lux or circadianlighting, the brightness and color temperature will be updated automatically, and this is not indicative of a manual change. For these cases, add a <code>state_attributes_ignore</code> field:</p>
+<pre><code class="yaml">  mtn_office:
+    sensor: binary_sensor.office_motion
+    trigger_on_activate: light.office_led
+    delay: 120
+    state_attributes_ignore:
+        - brightness
+        - color_temp
+</code></pre>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="ec-goes-into-blocked-state">EC goes into blocked state</h3>
+<p>Check how long it takes your control entities to actually turn on after the service call is dispatched. The default <code>grace_period</code> is 2 seconds.
+This means EC will make the call to turn on all entities and then it will ignore any state updates that come in for 2 seconds (default). The reason for this is that without this grace period, EC would actually block itself because it would interpret the state updates as manual control.</p>
+<p>Unfortunately, it is not possible to detect <em>who</em> called a service in Home Assistant. If that was the case we could simply ignore any service calls originating from EC itself.</p>
+<p>To solve your issue with EC ending up in <code>blocked</code> state, you can take a look at increasing the <code>grace_period</code> to something like 5 seconds. If your lights have a lot of latency then increasing this period will most likely resolve your issue.</p>
+<pre><code class="yaml">grace_period_ec:
+  sensor: binary_sensor.living_room_motion
+  entity: light.tv_backlight
+  grace_period: 5                           # default is 2
+</code></pre>
+
+<h1 id="debugging">Debugging</h1>
+<h2 id="enabling-debug-logging">Enabling Debug Logging</h2>
+<p>Check the <code>logger</code> component. Adding the following should print debug logs for <code>entity_controller</code>.
+If you have multiple instances, you can narrow down logs by adding the instance name. e.g. <code>custom_components.entity_controller.motion_lounge</code>.</p>
+<p>Note that the default logging is <code>critical</code> to allow you to focus on EC log output.</p>
+<pre><code class="yaml">logger:
+  default: critical
+  logs:
+    custom_components.entity_controller: debug
+
+</code></pre>
+
+<h3 id="time-constraint-helpers">Time constraint helpers</h3>
+<p>You can use <code>soon</code> and <code>soon-after</code> to make the time equal the current time plus 5 and 10 seconds respectively. THis is for testing.</p>
+<pre><code class="yaml">soon_test_case:
+  sensors:
+    - input_boolean.sense_motion2
+  entity: light.bed_light
+  start_time: soon
+  end_time: soon-after
+</code></pre>
+
+<h1 id="about-entity-controller">About Entity Controller</h1>
+<p>EC is a complete rewrite of the original application (version 0), using the Python <code>transitions</code> library to implement a <a href="https://en.wikipedia.org/wiki/Finite-state_machine">Finite State Machine</a>. This cleans up code logic considerably due to the nature of this application architecture.</p>
+<h2 id="related-research-and-development">Related Research and Development</h2>
+<ul>
+<li><a href="https://danielbkr.net/2018/03/20/motion-sensor-lights.html">Motion Lighting - first steps (superceded)</a></li>
+<li><a href="https://danielbkr.net/2018/05/17/appdaemon-motion-lights.html">Motion Lighting requirements - A complete guide</a></li>
+<li><a href="https://danielbkr.net/2018/08/25/ha-priority-locks.html">Home Assistant priority locks concept</a></li>
+<li><a href="https://danielbkr.net/2018/03/19/rf-binary-sensors.html">How to: Set up Stateless Motion Binary Sensors</a></li>
+</ul>
+<h1 id="automatic-updates-using-hacs">Automatic updates using HACS</h1>
+<p>EC is available on the Home Assistant Community Store (HACS). This is the recommended installation method to benefit from automated updates and quick release adoption. </p>
+<h1 id="contributions">Contributions</h1>
+<p>All contributions are welcome, including raising issues. Expect to be involved in the resolution of any issues. </p>
+<p>The <code>close-issue</code> bot is ruthless. Please provide all requested information to allow me to help you.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="intro/installation/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="intro/installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2020-09-13 07:09:25.418616+00:00
+-->
