@@ -202,8 +202,8 @@ The following behaviours can be defined using the values `"on"`, `"off"` and the
 |on_exit_idle||
 |on_enter_active||
 |on_exit_active||
-|on_enter_overidden||
-|on_exit_overidden||
+|on_enter_overridden||
+|on_exit_overridden||
 |on_enter_constrained||
 |on_exit_constrained||
 |on_enter_blocked||
