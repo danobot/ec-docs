@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Transition Behaviours (Experimental) - Entity Controller Documentation</title>
+  <title>Ignoring state updates from certain sources - Entity Controller Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Transition Behaviours (Experimental)";
-    var mkdocs_page_input_path = "config-advanced\\transition-behaviours.md";
+    var mkdocs_page_name = "Ignoring state updates from certain sources";
+    var mkdocs_page_input_path = "config-advanced\\ignore-state-changes.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -93,7 +93,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Advanced Configs</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../">Intro</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../custom-params/">Customize Service Calls</a>
@@ -102,13 +102,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../backoff/">Delay Backoff</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Transition Behaviours (Experimental)</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#supported-transition-points">Supported transition points:</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#supported-transition-behaviours">Supported transition behaviours:</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../transition-behaviours/">Transition Behaviours (Experimental)</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../services/">EC Services</a>
                     </li>
@@ -142,15 +136,11 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Advanced Configs &raquo;</li>
-        
-      
     
-    <li>Transition Behaviours (Experimental)</li>
+    <li>Ignoring state updates from certain sources</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/danobot/ec-docs/edit/master/docs/config-advanced/transition-behaviours.md"> Edit on ec-docs</a>
+        <a href="https://github.com/danobot/ec-docs/edit/master/docs/config-advanced/ignore-state-changes.md"> Edit on ec-docs</a>
       
     </li>
   </ul>
@@ -160,129 +150,24 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="transition-behaviours-beta">Transition Behaviours (beta)</h3>
-<p>Transition Behaviours allow you to define what EC should do at these transition points.</p>
-<p><strong>Use Case:</strong></p>
-<blockquote>
-<p>One use case for this is when lights turn on just before the end of the active period and then they never turn off because EC is constrained. For me, the light would be triggered by me walking into a room at 
-7am and the constrain period would begin at 7:16am. Since the light duration is 20 minutes, EC will never turn off the light because it is in <code>constrained</code> state at 7:20am. This is annoying because the lights stay on all day. I can use <code>on_enter_constrained: "off"</code> to turn off all lights at 7:16am (when the EC is constrained).</p>
-</blockquote>
-<pre><code>transition_behaviours:   # light triggers on then off
-    entities: 
-      - input_boolean.lamp
-    sensors:
-      - sensor.motion_sensor
-    overrides:
-      - input_boolean.override_switch
-    delay: 5
-    behaviours:
-      on_enter_constrained: &quot;on&quot;
-    start_time: sunset
-    end_time: &quot;7:16:00&quot;
+                <h1 id="ignoring-state-updates-from-certain-sources">Ignoring state updates from certain sources</h1>
+<p>EC ignores state updates that are the result of its own service calls to control entities. This is done to avoid EC accidentally blocking itself and getting stuck there indefinitely.</p>
+<p>There may come a time when you want to ignore state updates from a certain component, such as <code>circadianlighting</code>. Since the introduction of Home Assistant new <code>context</code> feature, we have much more information about <code>who</code> triggered a state change in Home Assistant state machine. EC utilizes this information and exposes the <code>ignored_event_sources</code> configuration key to allow you to add additional entries.</p>
+<p>To find out what value to put here, open the logs in DEBUG mode and check the <code>Context ID</code> value. This is what you should add to the <code>ignored_event_sources</code> list. </p>
+<pre><code class="yaml">motion_light:
+  sensor: binary_sensor.living_room_motion
+  entity: light.led                         # required
+  ignored_event_sources:
+    - anything1
 </code></pre>
 
-<p><strong>Notes about light flicker:</strong> This can cause light flicker particularly for the <code>on_exit_*</code> behaviours. If your lights flicker, make sure you understand how this configuration is impacting them and use the <code>on_enter_*</code> behaviours instead.</p>
-<h4 id="supported-transition-points">Supported transition points:</h4>
-<p>The following behaviours can be defined using the values <code>"on"</code>, <code>"off"</code> and the default being <code>"ignore"</code>. These must be in quotes to avoidconflicts with YAML truth values.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>on_enter_idle</td>
-<td></td>
-</tr>
-<tr>
-<td>on_exit_idle</td>
-<td></td>
-</tr>
-<tr>
-<td>on_enter_active</td>
-<td></td>
-</tr>
-<tr>
-<td>on_exit_active</td>
-<td></td>
-</tr>
-<tr>
-<td>on_enter_overridden</td>
-<td></td>
-</tr>
-<tr>
-<td>on_exit_overridden</td>
-<td></td>
-</tr>
-<tr>
-<td>on_enter_constrained</td>
-<td></td>
-</tr>
-<tr>
-<td>on_exit_constrained</td>
-<td></td>
-</tr>
-<tr>
-<td>on_enter_blocked</td>
-<td></td>
-</tr>
-<tr>
-<td>on_exit_blocked</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="supported-transition-behaviours">Supported transition behaviours:</h4>
-<p>You must put these in quotes.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>"on"</td>
-<td>Control entities will be explicitly turned on.</td>
-</tr>
-<tr>
-<td>"off"</td>
-<td>Control entities will be explicitly turned off.</td>
-</tr>
-<tr>
-<td>"ignore"</td>
-<td>(default) Nothing special will happen (control left to state machine)</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="yaml">  mtn_outside:
-    sensor: 
-      - binary_sensor.mtn_kitchen
-    entities:
-      - light.kitchen_led
-    state_entities:
-      - light.outside_light
-    delay: 1200
-    start_time: '18:00:00'
-    end_time: '07:00:00'
-    end_time_action: &quot;off&quot;                   # will turn off all control entities at 7am if they are on.
-</code></pre>
+<h2 id="technical-limitation">Technical limitation</h2>
+<p>This feature requires other components to use Home Assistant's <code>context</code> API correctly. If they do not introduce themselves when making a service call (e.g. "Hi  I am circadian lighting and please adjust the brightness on this light bulb") EC has no way to distinguish it from other components.</p>
+<p>Since this is a fairly new change in Home Assistant's API you should expect wider adoption to take some time.</p>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../services/" class="btn btn-neutral float-right" title="EC Services">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../backoff/" class="btn btn-neutral" title="Delay Backoff"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -306,10 +191,6 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../backoff/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../services/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
