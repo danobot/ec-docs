@@ -28,6 +28,14 @@ extra:
 
 nav:
   - Home: 'index.md'
+  
+  - About:
+    - 'Github': 'https://github.com/danobot/entity-controller'
+    - 'Release Notes': 'https://github.com/danobot/entity-controller/blob/master/CHANGELOG.md'
+    - 'Demo': 'intro/demo-instance.md'
+    - 'License': 'https://github.com/danobot/entity-controller/blob/master/COPYING'
+    - 'Blog': 'https://danielbkr.net'
+    - 'Contributions': 'intro/contributions.md'
   - 'Getting Started':
     - 'Installation': 'intro/installation.md'
     - 'Core Functionality': 'intro/core-functionality.md'
@@ -36,28 +44,19 @@ nav:
       - 'Entity Types': 'intro/entity-types.md'
       - 'Sensor Types': 'intro/sensor-types.md'
       - 'State Entites': 'intro/state-entities.md'
-  - 'Configuration':
-    - 'Basic':
-      - 'Time Constraints': 'config-basic/time-constraints.md'
-      - 'Night Mode': 'config-basic/night-mode.md'
-      - 'Override Entities': 'config-basic/override-entities.md'
-      - 'Stay Mode': 'config-basic/stay-mode.md'
-    - 'Advanced':
-      - 'Intro': 'config-advanced/index.md'
-      - 'Customize Service Calls': 'config-advanced/custom-params.md'
-      - 'Trigger Custom Scripts': 'config-advanced/custom-scripts.md'
-      - 'Delay Backoff': 'config-advanced/backoff.md'
-      - 'Transition Behaviours (Experimental)': 'config-advanced/transition-behaviours.md'
-      - 'EC Services': 'config-advanced/services.md'
-      - 'Block Mode Timeout': 'config-advanced/block-timeout.md'
-    - 'Special Use Cases':
-      - 'Ignore State Attribute Changes': 'special/ignore-state-attributes.md'
-      - 'Custom State strings': 'special/state-strings.md'
-
-  - About:
-      - 'Demo': 'https://ec-demo.danielbkr.net'
-      - 'Blog': 'https://danielbkr.net'
-      - 'License': 'https://github.com/danobot/entity-controller/blob/master/COPYING'
-      - 'Github': 'https://github.com/danobot/entity-controller'
-      - 'Release Notes': 'https://github.com/danobot/entity-controller/blob/master/CHANGELOG.md'
-      - 'Contributions': 'intro/contributions.md'
+  - 'Basic Configs':
+    - 'Time Constraints': 'config-basic/time-constraints.md'
+    - 'Night Mode': 'config-basic/night-mode.md'
+    - 'Override Entities': 'config-basic/override-entities.md'
+    - 'Stay Mode': 'config-basic/stay-mode.md'
+  - 'Advanced Configs':
+    - 'Intro': 'config-advanced/index.md'
+    - 'Customize Service Calls': 'config-advanced/custom-params.md'
+    - 'Trigger Custom Scripts': 'config-advanced/custom-scripts.md'
+    - 'Delay Backoff': 'config-advanced/backoff.md'
+    - 'Transition Behaviours (Experimental)': 'config-advanced/transition-behaviours.md'
+    - 'EC Services': 'config-advanced/services.md'
+    - 'Block Mode Timeout': 'config-advanced/block-timeout.md'
+  - 'Special Use Cases':
+    - 'Ignore State Attribute Changes': 'special/ignore-state-attributes.md'
+    - 'Custom State strings': 'special/state-strings.md'
