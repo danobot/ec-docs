@@ -39,11 +39,10 @@ nav:
   - 'Getting Started':
     - 'Installation': 'intro/installation.md'
     - 'Core Functionality': 'intro/core-functionality.md'
-    - 'Background': 
-      - 'EC States': 'intro/state-meanings.md'
-      - 'Entity Types': 'intro/entity-types.md'
-      - 'Sensor Types': 'intro/sensor-types.md'
-      - 'State Entites': 'intro/state-entities.md'
+    - 'EC States': 'intro/state-meanings.md'
+    - 'Entity Types': 'intro/entity-types.md'
+    - 'Sensor Types': 'intro/sensor-types.md'
+    - 'State Entites': 'intro/state-entities.md'
   - 'Basic Configs':
     - 'Time Constraints': 'config-basic/time-constraints.md'
     - 'Night Mode': 'config-basic/night-mode.md'
