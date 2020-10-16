@@ -8,7 +8,7 @@ EC ignores state updates that are the result of its own service calls to control
 
 There may come a time when you want to ignore state updates from a certain component, such as `adaptive_lighting`. Since the introduction of Home Assistant new `context` feature, we have much more information about `who` triggered a state change in Home Assistant state machine. EC utilizes this information and exposes the `ignored_event_sources` configuration key to allow you to add additional entries.
 
-To find out what value to put here, open the logs in DEBUG mode and check the `Context ID` value. This is what you should add to the `ignored_event_sources` list. Note, wildcards (*) ARE supported in this field.
+To find out what value to put here, open the logs in DEBUG mode and check the `Context ID` value. This is what you should add to the `ignored_event_sources` list. Note, any [regex pattern](https://docs.python.org/3/library/re.html) is supported in this field.
 
 ```yaml
 motion_light:
