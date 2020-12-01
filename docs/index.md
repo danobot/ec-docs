@@ -34,7 +34,7 @@ logger:
 
 
 ### Time constraint helpers
-You can use `soon` and `soon-after` to make the time equal the current time plus 5 and 10 seconds respectively. THis is for testing.
+You can use `soon` and `soon-after` to make the time equal the current time plus 5 and 10 seconds respectively. This is for testing.
 
 ```yaml
 soon_test_case:
