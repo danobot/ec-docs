@@ -5,7 +5,17 @@
 
 ## Entity Services
 
-The entity controller support a few services that can be used to extend the customization of the entity.
+Entity controller supports a few services that can be used to extend the customization of the entity.
+
+### Activate
+
+```yaml
+service: entity_controller.activate
+  entity_id: entity_controller.motion
+```
+
+This service activates an entity controller, which turns on the entity and transitions to the `active_timer` state.
+Calling this service will also clear the `blocking` state, if set.
 
 ### Stay Mode
 
