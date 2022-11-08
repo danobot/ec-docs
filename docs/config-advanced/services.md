@@ -60,6 +60,29 @@ automations:
 ```
 **Note:** The above example is functionally equivalent to setting a block timeout in the configuration.
 
+### Enabling Blocked State
+
+```yaml
+service: entity_controller.enable_block
+  entity_id: entity_controller.motion
+```
+
+This service will change state of EC entity to blocked, the same as if controlled entity was manually turned on outside of EC.
+This allows for automations to prevent entity controller from turning light off.
+
+**Example**
+```yaml
+automations:
+- id: example
+  trigger:
+  - platform: state
+      entity_id: binary_sensor.shower_presence
+      to: 'on'
+  action:
+  - service: entity_controller.enable_block
+    entity_id: entity_controller.motion
+```
+
 ### Set Night Mode
 
 ```yaml
