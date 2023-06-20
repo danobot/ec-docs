@@ -48,6 +48,7 @@ nav:
     - 'Night Mode': 'config-basic/night-mode.md'
     - 'Override Entities': 'config-basic/override-entities.md'
     - 'Stay Mode': 'config-basic/stay-mode.md'
+    - 'Disable Block Mode': 'config-basic/disable-block.md'
   - 'Advanced Configs':
     - 'Intro': 'config-advanced/index.md'
     - 'Customize Service Calls': 'config-advanced/custom-params.md'
