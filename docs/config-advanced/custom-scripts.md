@@ -5,6 +5,7 @@
 # Calling custom scripts
 
 You may want to use the activation and deactivation of EC as a trigger for some other entity (most like a script). For the `turn_on`. You can define `trigger_on_activate` and `trigger_on_deactivate`. The controller will call the `turn_on` service on both and observe the state using `entity`. These trigger entities:
+
 * do not receive custom service data (as they may not require it)
 * have only the `turn_on` service is called on  (as they may not support anything else)
 * will not have ther state observed (as it may be meaningless, like for Script entities.)
